@@ -1,0 +1,13 @@
+.row
+  .span4.offset4.well
+    %legend=t('.title')
+    = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f|
+      = f.error_notification
+      = display_base_errors resource
+      = f.input :name, :autofocus => true, :placeholder => t('.name'), :label => false, :input_html => {:class => "span4"}
+      = f.input :email, :required => true, :placeholder => t('.email'), :label => false, :input_html => {:class => "span4"}
+      = f.input :password, :required => true, :placeholder => t('.password'), :label => false, :input_html => {:class => "span4"}
+      = f.input :password_confirmation, :required => true, :placeholder => t('.password_confirmation'), :label => false, :input_html => {:class => "span4"}
+      = f.button :submit, t('.submit'), :class => 'btn-info btn-block'
+    .pull-right
+      = render "devise/shared/links"

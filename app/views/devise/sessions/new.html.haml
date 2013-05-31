@@ -1,0 +1,13 @@
+.row
+  .span4.offset4.well
+    %legend=t('.title') 
+    = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+      = f.error_notification
+      = display_base_errors resource
+      = f.input :email, :autofocus => true, :label => false, :placeholder => t('.email'), :input_html => {:class => :span4}
+      = f.input :password, :label => false, :placeholder => t('.password'), :input_html => {:class => :span4}
+      - if devise_mapping.rememberable?
+        = f.input :remember_me, :as => :boolean, :label => false, :inline_label => t('.remember_me')
+      = f.button :submit, t('.submit'), :class => 'btn-info btn-block'
+    .pull-right
+      = render "devise/shared/links"

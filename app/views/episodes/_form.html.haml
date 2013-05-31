@@ -1,0 +1,23 @@
+= simple_form_for(@episode) do |f|
+  = f.error_notification
+  .form-inputs
+    .row
+      .span8
+        = f.input :name, input_html: {:class => "input-block-level"}
+        = f.input :published, :as => :hidden
+        = f.input :transcode_required, :as => :hidden
+      .span4
+        = f.input :tag_names, input_html: {:class => "input-block-level"}
+    .row
+      .span12= f.input :description, input_html: {:class => "input-block-level", :rows => 5}, :placeholder => t('.support_markdown')
+    .row
+      .span6
+        = f.simple_fields_for :episode_image do |ei|
+          = ei.input_field :archive
+      .span6
+        = f.simple_fields_for :video do |vi|
+          = vi.input :archive
+    .row
+      .span12= f.input :notes, input_html: {:class => "input-block-level", :rows => 40}, :placeholder => t('.support_markdown')
+
+    = f.button :submit

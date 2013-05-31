@@ -1,0 +1,29 @@
+.container
+  %hr
+  .row-fluid
+    .span12
+      .span2{style: "width:15%;"}
+        %ul.unstyled
+          %li= t('.self_intro')
+          %li
+            %a{href: "javascript:void(0);"}= t('.about_me')
+          %li
+            %a{href: "javascript:void(0);", onclick:"window.open('http://blog.boboism.com');"}= t('.blog')
+          %li
+            %a{href: "mailto:sujianbo@gmail.com"}= t('.email')
+      .span2{style: "width:15%;"}
+        %ul.unstyled
+          %li= t('.applications')
+          %li
+            %a{href: "javascript:void(0);"}= t('.it_casts')
+  %hr
+  .row-fluid
+    .span12
+      .span8
+        %a{href: "javascript:void(0);"}Terms of Service
+        %span.muted= "|"
+        %a{href: "javascript:void(0);"}Privacy
+        %span.muted= "|"
+        %a{href: "javascript:void(0);"}Security
+      .span4
+        %p.muted.pull-right= t('.all_rights_reserved')

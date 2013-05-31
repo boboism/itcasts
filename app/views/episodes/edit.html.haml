@@ -1,0 +1,8 @@
+.row
+  .span12.well
+    %legend=t('.title', :title => @episode.title)
+    = render 'form'
+
+.btn-group
+  = link_to t('helpers.links.show'), @episode, :class => "btn"
+  = link_to t('helpers.links.back'), episodes_path, :class => "btn"

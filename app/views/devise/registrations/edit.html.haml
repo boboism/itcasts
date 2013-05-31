@@ -1,0 +1,15 @@
+.row
+  .span4.offset4.well
+    %legend=t('.title')
+    = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put}) do |f|
+      = f.error_notification
+      = display_base_errors resource
+      = f.input :name, :autofocus => true, :label => false, :placeholder => t('.name'), :input_html => {:class => :span4}
+      = f.input :email, :required => true, :label => false, :placeholder => t('.email'), :input_html => {:class => :span4}
+      = f.input :password, :autocomplete => "off", :required => false, :hint => t('.change_pass_tip'), :label => false, :placeholder => t('.password'), :input_html => {:class => :span4}
+      = f.input :password_confirmation, :required => false, :label => false, :placeholder => t(".password_confirmation"), :input_html => {:class => :span4}
+      = f.input :current_password, :hint => t('.current_pass_tip'), :required => true, :label => false, :placeholder => t(".current_password"), :input_html => {:class => :span4}
+      = f.button :submit, t('.submit'), :class => 'btn-primary btn-block'
+    .btn-group
+      = link_to t('.cancel_account'), registration_path(resource_name), :data => { :confirm => t('helpers.links.destroy_confirm')}, :method => :delete, :class => "btn btn-danger"
+      = link_to t('helpers.links.back'), :back, :class => "btn"

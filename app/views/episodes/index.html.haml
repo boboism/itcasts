@@ -1,0 +1,15 @@
+.row
+  .span9
+    - @episodes.each do |episode|
+      = render "episode", :episode => episode
+  .span3
+    .well
+      %ul.nav.nav-list
+        %li.nav-header
+          %h4=t('.tags') 
+        - Episode.tag_counts_on(:tags).each do |tag|
+          %li
+            = link_to tag.name, root_path("[search][text]" => tag.name) 
+.row
+  .span12
+    = paginate @episodes

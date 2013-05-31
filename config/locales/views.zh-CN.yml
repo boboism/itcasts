@@ -1,0 +1,33 @@
+zh-CN:
+  layouts:
+    application:
+      title: 'IT CASTS'
+      sub_title: "Beta"
+      description: 'IT CASTS'
+    navigation:
+      title: 'IT CASTS'
+      sub_title: "Beta"
+      placeholder: '输入名称或标签查询'
+      sign_in: "登录"
+      sign_out: "退出"
+      sign_up: "注册"
+      users: "用户"
+      edit_account: "我的资料"
+    footer:
+      self_intro: "自我介绍"
+      about_me: "关于我"
+      blog: "博客"
+      email: "邮件"
+      all_rights_reserved: "© 2013 boboism.com. All rights reserved"
+      applications: "应用"
+      it_casts: "IT CASTS"
+
+  episodes:
+    edit:
+      title: "编辑影集 %{title}"
+    new:
+      title: "新建影集"
+    form:
+      support_markdown: "支持Markdown语法"
+    index:
+      tags: "标签"

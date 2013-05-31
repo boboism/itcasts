@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %meta{:charset => 'utf-8'}
+    %meta{:'http-equiv' => 'X-UA-Compatible', :content => 'IE=edge,chrome=1'}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %meta{:content => content_for?(:description) ? yield(:description) : "IT CASTS", :name => "description"}
+    %title= content_for?(:title) ? yield(:title) : "IT CASTS"
+    = stylesheet_link_tag "application", :media => "all"
+    = stylesheet_link_tag "http://vjs.zencdn.net/4.0.2/video-js.css"
+    /= stylesheet_link_tag "http://vjs.zencdn.net/c/video-js.css"
+    /[if lt IE 9]
+      = javascript_include_tag "https://raw.github.com/aFarkas/html5shiv/master/dist/html5shiv.js"
+    = csrf_meta_tags
+    = yield(:head)
+  %body{:class => "#{controller_name} #{action_name}"}
+    = render 'layouts/navigation'
+    #main{:role => "main"}
+      .container
+        .row
+          .span12
+            = render 'layouts/messages'
+            = yield
+          .span12
+            = render 'layouts/footer'
+      / ! end of .container
+    / ! end of #main
+    = javascript_include_tag "application"
+    = javascript_include_tag "http://vjs.zencdn.net/4.0.2/video.js"
+    /= javascript_include_tag "http://vjs.zencdn.net/c/video.js"
+

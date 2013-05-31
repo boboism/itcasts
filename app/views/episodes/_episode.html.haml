@@ -1,0 +1,41 @@
+- model_class = Episode
+.row
+  .span9
+    .row
+      .span9
+        %h3
+          %strong
+            = link_to episode.title, episode
+    .row
+      .span3
+        = link_to image_tag(episode.episode_image.archive.url), episode, :class => "thumbnail"
+      .span6
+        %p= markdown episode.description
+        %p
+          = link_to episode, :class => "btn" do
+            = t('.details', default: t("helpers.links.details"))
+
+    .row
+    .row
+      .span9
+        %p
+        %p
+          %i.icon-user
+          = model_class.human_attribute_name(:created_by_id)
+          = link_to episode.created_by, user_path(episode.created_by)
+          |
+          %i.icon-calendar
+          = episode.created_at.to_date
+          /
+            |
+            %i.icon-comment
+            %a{:href => "javascript:void(0);"} comments
+            |
+            %i.icon-share
+            %a{:href => "javascript:void(0);"} shares
+          |
+          %i.icon-tag
+          = model_class.human_attribute_name(:tags)
+          - episode.tag_list.each do |tag|
+            = link_to content_tag("span", tag, :class => "label label-info"), root_path("[search][text]" => tag)
+        %hr

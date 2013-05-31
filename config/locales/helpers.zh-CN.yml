@@ -1,0 +1,44 @@
+zh-CN:
+  helpers:
+    submit:
+      create: "创建%{model}"
+      update: "更新%{model}"
+    actions: '操作'
+    views:
+      index:
+        title: '【%{title}】列表'
+      edit:
+        title: '编辑【%{title}】'
+      new:
+        title: '创建【%{title}】'
+      show:
+        title: '查看【%{title}】'
+    links:
+      publish: "发布"
+      play: "播放"
+      index: '列表'
+      edit: '编辑'
+      new: '创建'
+      show: '查看'
+      open: '打开'
+      back: '返回'
+      destroy: '删除'
+      destroy_confirm: '请确认是否删除?'
+      reject: '撤回'
+      confirm: '确认'
+      remind: '提醒'
+      xls: '导出'
+      print: '打印'
+      submit: '提交'
+      upload: '上传'
+      backward: '后退'
+      forward: '前进'
+      refresh: '刷新'
+      search: '查找'
+      close: '关闭'
+      details: '观看影集'
+      approve: '审核'
+      operation: '操作'
+      search_placeholder: '请填入需要查询的内容'
+    file:
+      unsupport_file_type: "不支持文件类型:%{name}"

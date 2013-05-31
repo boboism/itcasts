@@ -1,0 +1,26 @@
+zh-CN:
+  controllers:
+    update_success: "%{name}更新成功。"
+    update_fail: "%{name}更新失败。"
+    destroy_success: "%{name}删除成功。"
+    destroy_fail: "%{name}删除失败。"
+    create_success: "%{name}创建成功。"
+    create_fail: "%{name}创建失败。"
+
+    work_orders:
+      issue_success: "刀具%{hilt_no}发放成功"
+      issue_error_work_order: "所输入的刀具%{hilt_no}组合在系统中不存在"
+      receive_success: "刀具 %{hilt_no} 已经回收成功"
+      receive_nil_work_order: "系统中没有可回收刀具%{hilt_no}"
+      tune_success: "刀具 %{hilt_no} 已经录入调刀信息"
+      tune_nil_work_order: "系统中没有可调刀具%{hilt_no}"
+      grind_success: "刃具%{serial_no}已经磨刀成功"
+      grind_nil_part: "系统中没有可磨刀具%{serial_no}"
+      
+    tool_parts:
+      import_success: "刀具导入成功"
+
+    tool_boms:
+      import_success: "工序号—刀号导入成功"
+    episodes:
+      publish_success: "成功发布，系统在后台转码中！"

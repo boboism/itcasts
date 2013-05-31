@@ -1,0 +1,36 @@
+.navbar.navbar-fixed-top.navbar-inverse
+  %nav.navbar-inner
+    .container
+      %a.btn.btn-navbar{"data-toggle" => "collapse", "data-target" => ".nav-collapse"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+        = link_to root_path, class: 'btn btn-primary pull-left' do
+          %span{:style => "font-weight:bold"}= t('.title')
+          %span.muted{:style => "font-size:7px;font-weight:bold;"}= t('.sub_title')
+      .nav-collapse.collapse.navbar-responsive-collapse
+        .pull-right
+          = form_tag "/", :method => :get, :class => "navbar-search" do
+            = text_field_tag "[search][text]", nil, :class => "search-query", :placeholder => t(".placeholder"), :title => t(".placeholder")
+          %ul.nav
+            - if user_signed_in?
+              - if current_user.has_role? :admin
+                %li
+                  = link_to t('.users'), users_path
+                %li.divider-vertical
+              %li
+                = link_to edit_user_registration_path do
+                  %i.icon-user.icon-white
+                  = t('.edit_account')
+              %li.divider-vertical
+              %li
+                = link_to destroy_user_session_path, :method => 'delete' do
+                  %i.icon-off.icon-white
+                  = t('.sign_out')
+            - else
+              %li
+                = link_to t('.sign_in'), new_user_session_path
+              %li.divider-vertical
+              %li
+                = link_to t('.sign_up'), new_user_registration_path
+              %li.divider-vertical

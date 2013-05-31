@@ -1,0 +1,11 @@
+.row
+  .span4.offset4.well
+    %legend=t('.title')
+    = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+      = f.error_notification
+      .form-inputs
+        = f.input :email, :required => true, :autofocus => true, :label => false, :placeholder => t('.email'), :input_html => {:class => "span4"}
+    
+      = f.button :submit, t('.submit'), :class => "btn-info btn-block"
+    .pull-right    
+      = render "devise/shared/links"

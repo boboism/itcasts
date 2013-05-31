@@ -1,0 +1,41 @@
+zh-CN:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "请填写邮箱"
+              taken: "当前邮箱已经被使用"
+            current_password:
+              blank: "请填写当前密码"
+            password:
+              blank: "请填写密码"
+              confirmation: "请再次填写密码确认"
+        episode:
+          attributes:
+            name:
+              blank: "请填写标题"
+              too_short: "标题太短，请保持在4到20个字"
+    models:
+      episode:
+        one: "影集"
+        other: "影集"
+
+
+    attributes:
+      episode:
+        title: "#%{id} %{name}"
+        created_by_id: "作者"
+        updated_by_id: "更新"
+        tags: "标签"
+        name: "标题"
+        published: "发布"
+        transcode_required: "需要转码"
+        description: "简述"
+        notes: "笔记"
+        pubilshed_at: "发布时间"
+      video:
+        archive: "视频"
+      episode_image:
+        archive: "影集图片"
